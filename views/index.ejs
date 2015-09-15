@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bbbfund">
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <script type="text/javascript">
+  (function() {
+    var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
+        rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
+        baseUrl = location.href.replace(rUrl, indexFile),
+        production = location.hostname === 'docs.angularjs.org',
+        headEl = document.getElementsByTagName('head')[0],
+        sync = true;
+    
+    addTag('base', {href: baseUrl});
+    addTag('link', {rel: 'stylesheet', href: 'css/lib/bootstrap.min.css', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'css/lib/bootstrap-theme.min.css', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'css/lib/bootstrap-dialog.min.css', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'css/lib/bootstrap-datetimepicker.css', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'css/lib/bootstrap-combined.min.css', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'css/lib/dataTables.bootstrap.css', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'css/lib/bootstrap.css', type: 'text/css'});
+    // addTag('link', {rel: 'stylesheet', href: 'css/reset.css', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'css/grid.css', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'css/style.css', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'css/slider.css', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Passion+One:400', type: 'text/css'});
+    addTag('link', {rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Open+Sans:400,800', type: 'text/css'});
+    addTag('script', {src: 'js/jquery-1.7.min.js' }, sync);
+    addTag('script', {src: 'js/jquery.cycle.all.js' }, sync);
+    addTag('script', {src: 'js/jquery.easing.1.3.js' }, sync);
+    addTag('script', {src: 'js/tms-0.4.1.js' }, sync);
+    addTag('script', {src: 'js/lib/jquery.nicescroll.min.js' }, sync);
+    addTag('script', {src: 'js/lib/bootstrap.min.js' }, sync);
+    addTag('script', {src: 'js/lib/bootstrap-dialog.min.js' }, sync);
+    addTag('script', {src: 'js/lib/moment.js' }, sync);
+    addTag('script', {src: 'js/lib/bootstrap-datetimepicker.js' }, sync);
+    addTag('script', {src: 'js/lib/angular/angular.min.js' }, sync);
+    addTag('script', {src: 'js/lib/angular/angular-resource.min.js' }, sync);
+    addTag('script', {src: 'js/lib/angular/angular-route.min.js' }, sync);
+    addTag('script', {src: 'js/lib/angular/angular-cookies.min.js' }, sync);
+    addTag('script', {src: 'js/lib/angular/angular-sanitize.min.js' }, sync);
+    addTag('script', {src: 'js/lib/angular/angular-touch.min.js' }, sync);
+    addTag('script', {src: 'js/lib/angular/angular-animate.min.js' }, sync);
+    addTag('script', {src: 'js/lib/lodash.js' }, sync);
+    addTag('script', {src: 'js/config.js' }, sync);
+    addTag('script', {src: 'js/uiCtrl.js' }, sync);
+
+    function addTag(name, attributes, sync) {
+      var el = document.createElement(name), attrName;
+      for (attrName in attributes) {
+        el.setAttribute(attrName, attributes[attrName]);
+      }
+      sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
+    }
+
+    function outerHTML(node){
+      // if IE, Chrome take the internal method otherwise build one
+      return node.outerHTML || (
+        function(n){
+          var div = document.createElement('div'), h;
+          div.appendChild(n);
+          h = div.innerHTML;
+          div = null;
+          return h;
+        })(node);
+      }
+    })();
+  </script>
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
+   		<script type="text/javascript" src="js/html5.js"></script>
+    	<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+	<![endif]-->
+</head>
+<body>
+  <div ng-view></div>
+</body>
+</html>
