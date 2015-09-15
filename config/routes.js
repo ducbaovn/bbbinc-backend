@@ -56,7 +56,7 @@ module.exports.routes = {
   'post /auth/facebook': 'AuthController.facebook',
   'get /auth/facebook/callback': 'AuthController.fbcallback',
   'post /auth/google': 'AuthController.google',
-  'post /auth/google/callback': 'AuthController.ggcallback',
+  'get /auth/google/callback': 'AuthController.ggcallback',
   'post /test': 'AuthController.test',
   'post /auth/logout': 'AuthController.logout',
   'post /refresh': 'StockController.refresh',

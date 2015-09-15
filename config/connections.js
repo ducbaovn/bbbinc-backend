@@ -65,19 +65,6 @@ module.exports.connections = {
     // database: ''
   },
 
-  // localRedis: {
-  //   adapter: 'sails-redis',
-  //   host: 'localhost',
-  //   port: 6379,
-  //   database: 1,
-  //   options: {
-  //     return_buffers: false,
-  //     detect_buffers: false,
-  //     socket_nodelay: true,
-  //     enable_offline_queue: true
-  //   }
-  // },
-
   /***************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *
