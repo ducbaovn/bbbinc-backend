@@ -1,7 +1,6 @@
 exports.vnList = (req, res)->
 	params = req.allParams()
 	params.group = ['VN', 'VN30']
-	# res.header("Access-Control-Allow-Origin", "*")
 	StockIndexService.list params, (err, list)->
 		if err
 			sails.log.info err.log
@@ -11,7 +10,6 @@ exports.vnList = (req, res)->
 exports.newList = (req, res)->
   params = req.allParams()
   params.group = ['VN', 'VN30']
-  # res.header("Access-Control-Allow-Origin", "*")
   StockIndexService.newList params, (err, list)->
     if err
       sails.log.info err.log

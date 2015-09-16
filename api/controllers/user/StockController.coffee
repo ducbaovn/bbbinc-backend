@@ -1,5 +1,4 @@
 exports.changeList = (req, res)->
-  # res.header("Access-Control-Allow-Origin", "*")
   params = req.allParams()
   params.user = req.user.id
   StockUserService.newList params, (err, userStocks)->
@@ -14,7 +13,6 @@ exports.changeList = (req, res)->
       return res.send changeList
 
 exports.newList = (req, res)->
-  # res.header("Access-Control-Allow-Origin", "*")
   params = req.allParams()
   params.user = req.user.id
   StockUserService.newList params, (err, userStocks)->
@@ -24,7 +22,6 @@ exports.newList = (req, res)->
     return res.send userStocks
 
 exports.list = (req, res)->
-  # res.header("Access-Control-Allow-Origin", "*")
   params = req.allParams()
   params.user = req.user.id
   StockUserService.list params, (err, userStocks)->
@@ -34,7 +31,6 @@ exports.list = (req, res)->
     return res.send bbbStocks
 
 exports.analyse = (req, res)->
-  # res.header("Access-Control-Allow-Origin", "*")
   params = req.allParams()
   params.user = req.user.id
   UserAnalyseService.info params, (err, userAnalyse)->

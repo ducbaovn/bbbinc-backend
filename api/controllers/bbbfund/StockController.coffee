@@ -1,5 +1,4 @@
 exports.changeList = (req, res)->
-  # res.header("Access-Control-Allow-Origin", "*")
   params = req.allParams()
   User.findOne nickname: 'bbbfund', (err, bbbfund)->
     if err
@@ -18,7 +17,6 @@ exports.changeList = (req, res)->
         return res.send changeList
 
 exports.newList = (req, res)->
-  # res.header("Access-Control-Allow-Origin", "*")
   params = req.allParams()
   User.findOne nickname: 'bbbfund', (err, bbbfund)->
     if err
@@ -32,7 +30,6 @@ exports.newList = (req, res)->
       return res.send bbbStocks
 
 exports.list = (req, res)->
-  # res.header("Access-Control-Allow-Origin", "*")
   params = req.allParams()
   User.findOne nickname: 'bbbfund', (err, bbbfund)->
     if err
@@ -46,7 +43,6 @@ exports.list = (req, res)->
       return res.send bbbStocks
 
 exports.analyse = (req, res)->
-  # res.header("Access-Control-Allow-Origin", "*")
   params = req.allParams()
   User.findOne nickname: 'bbbfund', (err, bbbfund)->
     if err

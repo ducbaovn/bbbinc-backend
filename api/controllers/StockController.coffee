@@ -3,8 +3,6 @@ async = require('async')
 module.exports =
 
 	listMarket: (req, res)->
-		# res.header("Access-Control-Allow-Credentials", true)
-		# res.header("Access-Control-Allow-Origin", "*")
 		params = req.allParams()
 		StockService.listMarket params, (err, list)->
 			if err
@@ -13,7 +11,6 @@ module.exports =
 			sails.log.info '[StockController.listMarket] SUCCESS: Send list market'
 			return res.send list
 	list: (req, res)->
-		# res.header("Access-Control-Allow-Origin", "*")
 		params = req.allParams()
 		StockService.list params, (err, list)->
 			if err

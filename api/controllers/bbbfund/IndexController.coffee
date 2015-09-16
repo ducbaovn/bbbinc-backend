@@ -1,6 +1,5 @@
 exports.newList = (req, res)->
 	params = req.allParams()
-	# res.header("Access-Control-Allow-Origin", "*")
 	User.findOne nickname: 'bbbfund', (err, bbbfund)->
 		if err
 			sails.log.info "[bbbfund/IndexController.new] ERROR: Could not find user bbbfund... #{err}"
@@ -26,7 +25,6 @@ exports.newList = (req, res)->
 
 exports.chart = (req, res)->
 	params = req.allParams()
-	# res.header("Access-Control-Allow-Origin", "*")
 	User.findOne nickname: 'bbbfund', (err, bbbfund)->
 		if err
 			sails.log.info "[bbbfund/IndexController.chart] ERROR: Could not find user bbbfund... #{err}"

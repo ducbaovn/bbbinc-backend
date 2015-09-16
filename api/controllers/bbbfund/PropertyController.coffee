@@ -1,6 +1,5 @@
 exports.newList = (req, res)->
 	params = req.allParams()
-	# res.header("Access-Control-Allow-Origin", "*")
 	User.findOne nickname: 'bbbfund', (err, bbbfund)->
 		if err
 			sails.log.info "[bbbfund/PropertyController.new] ERROR: Could not find user bbbfund... #{err}"
@@ -14,7 +13,6 @@ exports.newList = (req, res)->
 
 exports.yearlyChart = (req, res)->
 	params = req.allParams()
-	# res.header("Access-Control-Allow-Origin", "*")
 	User.findOne nickname: 'bbbfund', (err, bbbfund)->
 		if err
 			sails.log.info "[bbbfund/PropertyController.yearlyChart] ERROR: Could not find user bbbfund... #{err}"

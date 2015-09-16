@@ -1,6 +1,5 @@
 exports.newList = (req, res)->
 	params = req.allParams()
-	# res.header("Access-Control-Allow-Origin", "*")
 	params.user = req.user.id
 	UserPropertyService.newList params, (err, list)->
 		if err
@@ -10,7 +9,6 @@ exports.newList = (req, res)->
 
 exports.yearlyChart = (req, res)->
 	params = req.allParams()
-	# res.header("Access-Control-Allow-Origin", "*")
 	params.user = req.user.id
 	UserPropertyService.yearlyChart params, (err, result)->
 		if err

@@ -32,11 +32,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  // '/': {
-  //   view: 'index'
-  // },
-
-  // 'get /partials/home': 'ViewController.home',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
@@ -46,18 +41,12 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-  // 'post /auth/register': 'AuthController.register',
-  // 'post /auth/registerfb': 'AuthController.registerFb',
-  // 'post /auth/registergg': 'AuthController.registerGg',
-  // 'post /auth/loginfb': 'AuthController.loginFb',
-  // 'post /auth/logingg': 'AuthController.loginGg',
   'post /auth/register': 'AuthController.register',
   'post /auth/login': 'AuthController.login',
   'post /auth/facebook': 'AuthController.facebook',
   'get /auth/facebook/callback': 'AuthController.fbcallback',
   'post /auth/google': 'AuthController.google',
   'get /auth/google/callback': 'AuthController.ggcallback',
-  'post /test': 'AuthController.test',
   'post /auth/logout': 'AuthController.logout',
   'post /refresh': 'StockController.refresh',
 

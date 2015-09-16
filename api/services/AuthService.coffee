@@ -10,7 +10,6 @@ exports.register = (req, res)=>
       if err
         sails.log.info "[AuthService.register] ERROR: Could not local login... #{err}"
         return res.badRequest {code: 1002, error: "[AuthService.register] ERROR: Could not local login... #{err}"}
-      # req.session.user = user.id
       return res.send user
   ) req, res
 
@@ -45,7 +44,7 @@ exports.fbcallback = (req, res)->
       if err
         sails.log.info "[AuthService.fbcallback] ERROR: Could not fb login... #{err}"
         return res.redirect 'http://bbbinc.herokuapp.com/#/login'
-      return res.redirect 'http://bbbinc.herokuapp.com/#/user'
+      return res.redirect 'http://bbbinc.herokuapp.com/#/user/overview'
   )(req, res)
 
 exports.google = (req, res)->
@@ -67,5 +66,5 @@ exports.ggcallback = (req, res)->
       if err
         sails.log.info "[AuthService.register] ERROR: Could not gg login... #{err}"
         return res.redirect 'http://bbbinc.herokuapp.com/#/login'
-      return res.redirect 'http://bbbinc.herokuapp.com/#/user'
+      return res.redirect 'http://bbbinc.herokuapp.com/#/user/overview'
   )(req, res)

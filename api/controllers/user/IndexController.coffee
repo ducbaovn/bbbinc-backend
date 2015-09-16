@@ -1,6 +1,5 @@
 exports.newList = (req, res)->
 	params = req.allParams()
-	# res.header("Access-Control-Allow-Origin", "*")
 	params.user = req.user.id
 	UserIndexService.newList params, (err, list)->
 		if err
@@ -22,7 +21,6 @@ exports.newList = (req, res)->
 
 exports.chart = (req, res)->
 	params = req.allParams()
-	# res.header("Access-Control-Allow-Origin", "*")
 	params.user = req.user.id
 	ChartService.indexLine params, (err, chartData)->
 		if err
